@@ -1,17 +1,18 @@
-import styles from "./Header.module.css";
+import SearchBar from '../SearchBar/SearchBar';
+import styles from './Header.module.css';
 
-function Header() {
+interface HeaderProps {
+  searchQuery: string;
+  onSearchChange: (value: string) => void;
+}
+
+function Header({ searchQuery, onSearchChange }: HeaderProps) {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
         <h1 className={styles.title}>Movie Library</h1>
         <div className={styles.searchWrapper}>
-          <input
-            type="search"
-            className={styles.searchInput}
-            placeholder="Search movies..."
-            aria-label="Search movies"
-          />
+          <SearchBar value={searchQuery} onChange={onSearchChange} />
         </div>
       </div>
     </header>

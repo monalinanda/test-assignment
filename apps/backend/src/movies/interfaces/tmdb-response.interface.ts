@@ -21,3 +21,6 @@ export interface TmdbPopularResponse {
   total_pages: number;
   total_results: number;
 }
+
+// Search uses the same paginated structure as popular
+export type TmdbSearchResponse = TmdbPopularResponse;

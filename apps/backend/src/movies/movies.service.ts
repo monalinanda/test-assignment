@@ -6,6 +6,7 @@ import type { Movie } from './interfaces/movie.interface';
 import type {
   TmdbMovie,
   TmdbPopularResponse,
+  TmdbSearchResponse,
 } from './interfaces/tmdb-response.interface';
 import type { MovieResponseDto } from './dto/movie-response.dto';
 
@@ -64,6 +65,34 @@ export class MoviesService {
       throw new InternalServerErrorException(
         `TMDB API error: ${message}`,
       );
+    }
+  }
+
+  async searchMovies(query: string, page: number = 1): Promise<MovieResponseDto> {
+    try {
+      const response = await firstValueFrom(
+        this.httpService.get<TmdbSearchResponse>(
+          `${this.baseUrl}/search/movie`,
+          {
+            params: {
+              api_key: this.apiKey,
+              query,
+              page,
+            },
+          },
+        ),
+      );
+
+      const data = response.data;
+      return {
+        movies: data.results.map((movie) => this.transformMovie(movie)),
+        page: data.page,
+        totalPages: data.total_pages,
+      };
+    } catch (error: unknown) {
+      const message =
+        error instanceof Error ? error.message : 'Failed to search movies';
+      throw new InternalServerErrorException(`TMDB API error: ${message}`);
     }
   }
 }
