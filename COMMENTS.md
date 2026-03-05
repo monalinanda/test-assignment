@@ -1,6 +1,6 @@
 # AI Disclosure
 
-I used chatGPT and Copilot copilot to help me to understand Nestjs. It is new to me  and i had not work with it before . I mainly used AI to understand how the services and controller  structure work  and see the simple examples implementaion for fetching data from API .
+I used ChatGPT and Copilot  to help me to understand Nestjs. It is new to me  and i had not work with it before . I mainly used AI to understand how the services and controller  structure work  and see the simple examples implementaion for fetching data from API .
 
 ## Prompt I used 
 1. what is contoller and Providers in Nestjs ?
