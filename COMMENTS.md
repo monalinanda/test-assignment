@@ -43,8 +43,8 @@ while implemeted code in my project and read nestjs documentation and understand
 
 1. API rate Limit :
     - TMDB allows about 40 requests per 10 seconds per API key .
-    - If service tries to call TMDB 10,000 times per second, it will hit the limit almost instantly because 10,000 ≫ 40.   TMDB will respond with a 429 (Too Many Requests) error .
-     - service doesn’t do any  caching, or optimization .It jsut directly calls api and returns response .
+    - If service tries to call TMDB 10,000 times per second, it will hit the limit almost instantly because 10,000 > 40 . TMDB will respond with a 429 (Too Many Requests) error 
+    - service doesn’t do any caching, or optimization . It jsut directly calls api and returns response .
 
 2. Chaching :
      - getGenres() , getPopularMovies() and searchMovies() fetch fresh data every time (every request hits TMDB).
