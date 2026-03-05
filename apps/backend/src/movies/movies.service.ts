@@ -27,6 +27,7 @@ export class MoviesService {
     this.baseUrl = this.configService.getOrThrow<string>('TMDB_BASE_URL');
   }
 
+  // transform TMDB movie data to our Movie interface
   private transformMovie(raw: TmdbMovie): Movie {
     return {
       id: raw.id,
@@ -41,6 +42,7 @@ export class MoviesService {
     };
   }
 
+  //fetch data for popular movies
   async getPopularMovies(page: number = 1): Promise<MovieResponseDto> {
     try {
       const response = await firstValueFrom(
@@ -62,6 +64,7 @@ export class MoviesService {
     }
   }
 
+  //serach movies by title
   async searchMovies(query: string, page: number = 1): Promise<MovieResponseDto> {
     try {
       const response = await firstValueFrom(
@@ -83,6 +86,7 @@ export class MoviesService {
     }
   }
 
+  //fetch genres for the filter bar
   async getGenres(): Promise<GenresResponseDto> {
     try {
       const response = await firstValueFrom(
@@ -99,6 +103,7 @@ export class MoviesService {
     }
   }
 
+  //discover movies by genre
   async discoverByGenre(genreId: number, page: number = 1): Promise<MovieResponseDto> {
     try {
       const response = await firstValueFrom(
