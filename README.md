@@ -76,13 +76,13 @@ A movie library application built with NestJS backend and React frontend, integr
 1. Build the backend:
    ```bash
    cd apps/backend
-   npm run build
+   pnpm run build
    ```
 
 2. Build the frontend:
    ```bash
    cd apps/frontend
-   npm run build
+   pnpm run build
    ```
 
 ## API Endpoints
