@@ -1,4 +1,4 @@
-# Entain Movie App
+#  Movie library App
 
 A movie library application built with NestJS backend and React frontend, integrating with The Movie Database (TMDB) API.
 
