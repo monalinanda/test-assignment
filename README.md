@@ -36,7 +36,7 @@ A movie library application built with NestJS backend and React frontend, integr
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/monalinanda/entain-assignment.git
+   git clone https://github.com/monalinanda/test-assignment.git
    cd entain-assignment
    ```
 
